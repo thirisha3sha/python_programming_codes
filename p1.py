@@ -1,0 +1,9 @@
+pp=0
+qq=6
+rr=7
+pp=rr+pp
+pp=(rr&4)^rr
+if((qq&pp&rr)<(rr&qq)):
+    if((qq^pp)<(rr+qq)):
+        rr=(3+1)^pp
+print(pp+qq+rr)
