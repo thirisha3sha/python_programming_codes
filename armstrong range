@@ -1,0 +1,98 @@
+#method 1
+'''
+def armstrong_range(start,end):
+    armstrong_lst=[]
+    for num in range(start,end+1):
+        temp=num
+        sum=0
+        digits=len(str(num))
+        while num>0:
+            digit=num%10
+            sum+=digit**digits
+            num//=10
+        if sum==temp:
+            armstrong_lst.append(temp)
+    return armstrong_lst
+print(armstrong_range(100,400))
+'''
+#method 2
+'''
+class ArmstrongRange:
+    def __init__(self,start,end):
+        self.start=start
+        self.end=end
+    def check(self):
+        armstrong_lst=[]
+        for num in range(self.start,self.end):
+            temp=num
+            sum=0 
+            digits=len(str(num))
+            while num>0:
+                digit=num%10
+                sum+=digit**digits
+                num//=10
+            if sum==temp:
+                armstrong_lst.append(temp)
+        return armstrong_lst
+    def display(self):
+        result=self.check()
+        print(result)
+a=ArmstrongRange(100,500)
+a.display()
+ArmstrongRange(150,300).display()
+'''
+#method 3
+'''
+class ArmstrongRange:
+    @classmethod
+    def check(cls,start,end):
+        armstrong_lst=[]
+        for num in range(start,end):
+            temp=num
+            sum=0 
+            digits=len(str(num))
+            while num>0:
+                digit=num%10
+                sum+=digit**digits
+                num//=10
+            if sum==temp:
+                armstrong_lst.append(temp)
+        return armstrong_lst
+    @classmethod
+    def display(cls,start,end):
+        result=cls.check(start,end)
+        print(result)
+ArmstrongRange.display(100,500)
+a=ArmstrongRange
+a.display(150,300)
+'''
+#method 4
+'''
+def armstrong_range(start,end):
+    armstrong_lst=[]
+    for num in range(start,end+1):
+        n_str=str(num)
+        digits=len(n_str)
+        sum_of_pow=sum(int(i)**digits for i in n_str)
+        if sum_of_pow==num:
+            armstrong_lst.append(num)
+    return armstrong_lst
+print(armstrong_range(100,1000))
+'''
+# method 5
+def armstrong(n):
+    temp=n
+    sum=0 
+    digits=len(str(n))
+    while n>0:
+        digit=n%10
+        sum+=digit**digits
+        n//=10
+    return sum==temp
+def range_check(start,end):
+    armstrong_lst=[i for i in range(start,end+1) if armstrong(i)]
+    return armstrong_lst
+
+print(range_check(100,1000))
+
+# method 6

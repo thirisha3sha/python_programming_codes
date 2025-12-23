@@ -1,0 +1,29 @@
+# i/p [10,20,30,40,50]
+# left rotate by 2 --> [40,50,10,20,30]
+# right rotate by 2 --> [30,40,50,10,20]
+def left_rotate(arr,k):
+    k=k%len(arr)
+    return arr[k:]+arr[:k]
+def right_rotate(arr,k):
+    k=k%len(arr)
+    return arr[-k:]+arr[:-k]
+print(left_rotate([1,2,3,4,5],2))
+print(right_rotate([1,2,3,4,5],2))
+
+# method 2 -->>manual shifting
+def left(arr,k):
+    n=len(arr)
+    k=k%n
+    for i in range(k):
+        first=arr.pop(0) # remov 1st ele
+        arr.append(first) # add it at end
+    return arr
+def right(arr,k):
+    n=len(arr)
+    k=k%n
+    for i in range(k):
+        last=arr.pop() # remove last ele
+        arr.insert(0,last)
+    return arr
+print(left([1,2,3,4,5],2))
+print(right([1,2,3,4,5],2))  

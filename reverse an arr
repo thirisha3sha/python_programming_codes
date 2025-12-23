@@ -1,0 +1,22 @@
+# method 1 -->> reverse an arr
+def reverse_array(arr):
+    start=0 
+    end=len(arr)-1
+    while start<end:
+        arr[start],arr[end]=arr[end],arr[start]
+        start+=1
+        end-=1
+    return arr
+print(reverse_array([1,2,3,4,5]))
+# method 2 -->> reverse an arr
+def reverse_array(arr):
+    return arr[::-1]
+print(reverse_array([1,2,3,4,5]))
+
+# method 3 -->> reverse an arr
+def reverse_array(arr):
+    reversed_arr=[]
+    for i in range(len(arr)-1,-1,-1): # from last index to 0 index  --->> starting,ending,step,step
+        reversed_arr.append(arr[i])
+    return reversed_arr
+print(reverse_array([1,2,3,4,5]))

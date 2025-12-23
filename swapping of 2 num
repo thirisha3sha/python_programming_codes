@@ -1,0 +1,30 @@
+# method 1: using def function
+def swap(a,b):
+    return b,a  # output will be in tuple format
+x=89
+y=34 
+print("before swapping: x =",x," y =",y)
+print("after swapping: x =",swap(x,y)[0]," y =",swap(x,y)[1]) # accessing tuple elements
+print("after swapping:",swap(x,y))
+
+#method 2:using temp variable
+def swap1(a,b):
+    temp=a
+    a=b
+    b=temp
+    return a,b
+n1=5 
+n2=7 
+print("before swapping: x =",x," y =",y)
+print("after swapping:",swap1(n1,n2))
+print("after swapping: x =",swap1(n1,n2)[0]," y =",swap1(n1,n2)[1]) # accessing tuple elements
+
+# method 3
+def swap2(a,b):
+    a,b=b,a
+    return a,b
+n1=55
+n2=72
+print("before swapping: x =",x," y =",y)
+print("after swapping:",swap1(n1,n2))
+print("after swapping: x =",swap1(n1,n2)[0]," y =",swap1(n1,n2)[1]) # accessing tuple elements

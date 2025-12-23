@@ -1,0 +1,122 @@
+# 2nd smallest and largest in array
+# method 1--> 2nd largest elemeni in arr
+'''
+def second_largest(arr):
+    first=max(arr)
+    arr.remove(first)
+    second=max(arr)
+    return second
+print(second_largest([3,5,1,8,0,-1,4]))
+# method 2
+def second_largest(arr):
+    arr.sort()
+    return arr[-2]
+print(second_largest([3,5,1,8,0,4]))
+# method 3  
+def second_largest(arr):
+    first=second=float('-inf')
+    for i in arr:
+        if i>first:
+            second=first
+            first=i
+        elif i>second and i!=first:
+            second=i
+    return second
+print(second_largest([3,15,1,8,0,4,8,5]))
+
+# method 4
+def second_largest(arr):
+    unique_arr=list(set(arr)) # removing duplicates
+    unique_arr.sort()
+    return unique_arr[-2]
+print(second_largest([13,5,1,18,0,4,8,5]))
+'''
+# method 1--> 2nd smallest elemeni in arr
+'''
+def second_smallest(arr):
+    first=min(arr)
+    arr.remove(first)
+    second=min(arr)
+    return second
+print(second_smallest([3,5,1,8,0,-1,4]))
+# method 2
+def second_smallest(arr):
+    arr.sort()
+    return arr[1]
+print(second_smallest([3,5,1,8,0,4]))
+# method 3
+def second_smallest(arr):
+    first=second=float('inf')
+    for i in arr:
+        if i<first:
+            second=first
+            first=i
+        elif i<second and i!=first:
+            second=i
+    return second
+print(second_smallest([3,15,1,8,0,4,8,5]))
+
+# method 4
+def second_smallest(arr):
+    unique_arr=list(set(arr)) # removing duplicates
+    unique_arr.sort()
+    return unique_arr[1]
+print(second_smallest([13,5,1,18,0,4,8,5]))
+'''
+# both 2nd smallest and largest
+def second_smallest_largest(arr):
+    unique_arr=list(set(arr)) # removing duplicates
+    unique_arr.sort()
+    return unique_arr[1],unique_arr[-2]
+print(second_smallest_largest([13,5,1,18,0,4,8,5]))
+
+# both 2nd smallest and largest using single traversal
+def second_smallest_largest(arr):
+    first_small=second_small=float('inf')
+    first_large=second_large=float('-inf')
+    for i in arr:
+        # for smallest
+        if i<first_small:
+            second_small=first_small
+            first_small=i
+        elif i<second_small and i!=first_small:
+            second_small=i
+        # for largest
+        if i>first_large:
+            second_large=first_large
+            first_large=i
+        elif i>second_large and i!=first_large:
+            second_large=i
+    return second_small,second_large
+print(second_smallest_largest([13,5,1,18,0,4,8,5]))
+
+
+# find the 2nd smallest and largest in arr.print -1 in case of no 2nd smallest or largest
+def second_smallest_largest(arr):
+    first_small=second_small=float('inf')
+    first_large=second_large=float('-inf')
+    for i in arr:
+        # for smallest
+        if i<first_small:
+            second_small=first_small
+            first_small=i
+        elif i<second_small and i!=first_small:
+            second_small=i
+        # for largest
+        if i>first_large:
+            second_large=first_large
+            first_large=i
+        elif i>second_large and i!=first_large:
+            second_large=i  
+        if second_small==float('inf'):
+            second_small=-1
+        if second_large==float('-inf'):
+            second_large=-1
+    return second_small,second_large
+print(second_smallest_largest([13,5,1,18,0,4,8,5]))
+print(second_smallest_largest([5,5,5,5]))
+print(second_smallest_largest([1]))
+
+
+
+    

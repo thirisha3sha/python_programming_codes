@@ -1,0 +1,19 @@
+# using isalpha()
+def alpha(s):
+    return "".join([ch for ch in s if ch.isalpha()])
+print(alpha("hello$%#$12hii"))
+
+# using regular expression(re)
+import re
+def alpha1(s):
+    return re.sub(r'[^a-zA-Z]','',s)
+print(alpha1("hello$%#$12hii"))
+
+# method 3-->manual iteration
+def alpha2(s):
+    res=""
+    for ch in s:
+        if ('a'<=ch<='z') or ('A'<=ch<='Z'):
+            res+=ch
+    return res
+print(alpha2("hello$%#$12hii"))

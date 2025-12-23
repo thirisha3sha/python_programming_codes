@@ -1,0 +1,21 @@
+# capitalize 1st and last char in each word in str
+# for one word
+'''
+def caps(s):
+    s=s[0:1].upper()+s[1:len(s)-1]+s[len(s)-1:len(s)].upper()
+    return s
+print(caps("hello"))
+'''
+
+# for a str
+def caps(s):
+    words=s.split()
+    res=[]
+    for word in words:
+        if len(word)==1:
+            res.append(word.upper())
+        else:
+            new_word=word[0].upper()+word[1:-1]+word[-1].upper()
+            res.append(new_word)
+    return ' '.join(res)
+print(caps("hello all this is a prgm"))

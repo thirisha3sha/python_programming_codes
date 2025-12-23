@@ -1,0 +1,48 @@
+# method 1--> smallest elemeni in arr
+def minimum(arr):
+    min=arr[0]
+    for i in arr:
+        if i<min:
+            min=i
+    return min
+print(minimum([3,5,1,8,0,-1,4]))
+
+# method 2
+def minimum(arr):
+    arr.sort()
+    return arr[0]
+print(minimum([3,5,1,8,0,4]))
+
+# method 3
+def minimum(arr):
+    return min(arr)
+print(minimum([3,5,1,8,0,4]))
+
+#method 4
+def minimum(arr):
+    return sorted(arr)[0]
+print(minimum([3,5,1,8,4]))
+
+# method 5
+class Minimum:
+    def __init__(self,arr):
+        self.arr=arr
+    def find_min(self):
+        min=self.arr[0]
+        for i in self.arr:
+            if i<min:
+                min=i 
+        return min
+m=Minimum([3,5,11,8,4])
+print(m.find_min())
+
+# method 6
+class Minimum:
+    @classmethod
+    def find_min(cls,arr):
+        min=arr[0]
+        for i in arr:
+            if i<min:
+                min=i 
+        return min
+print(Minimum.find_min([13,5,11,8,4]))

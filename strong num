@@ -1,0 +1,25 @@
+#A number is called strong number if sum of the factorial of its
+# digit is equal to number itself.
+'''
+For example: 145
+since
+1! + 4! + 5! = 1 + 24 + 120 = 145
+'''
+def fact(n):
+    if n==0 or n==1:
+        return 1
+    else:
+        return n*fact(n-1)
+def sum_fact(n):
+    sum=0
+    temp=n
+    while temp>0:
+        digit=temp%10
+        sum+=fact(digit)
+        temp//=10
+    return sum==n
+print(sum_fact(145))
+print(sum_fact(12))
+     
+        
+   

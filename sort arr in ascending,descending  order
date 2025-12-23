@@ -1,0 +1,18 @@
+# arr sorting ascending
+def ascending_sort(arr):
+    n=len(arr)
+    for i in range(n):
+        for j in range(i+1,n):
+            if arr[i]>arr[j]:
+                arr[i],arr[j]=arr[j],arr[i]
+    return arr
+print(ascending_sort([78,34,23,675,89]))
+# descending sort
+def descending_sort(arr):
+    n=len(arr)
+    for i in range(n):
+        for j in range(i+1,n):
+            if arr[i]<arr[j]:
+                arr[i],arr[j]=arr[j],arr[i]
+    return arr
+print(descending_sort([78,34,23,675,89]))

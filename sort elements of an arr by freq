@@ -1,0 +1,35 @@
+# sorting elements of an arr by frequency of occurrence
+def sort_by_freq(array):
+    freq={}
+    for i in array:
+        if i in freq:
+            freq[i]+=1
+        else:
+            freq[i]=1                       # key=lambda x: (freq[x], x) means sorting is done based on a tuple of two values:
+    return sorted(array, key=lambda x: (freq[x], x)) # sort by frequency, then by value -->lambda fun is working as key for sort fn 
+
+print(sort_by_freq([4,5,6,5,4,3]))  # Output: [3, 6, 4, 4, 5, 5]
+print(sort_by_freq(['apple', 'banana', 'apple', 'orange', 'banana', 'apple']))  # Output: ['orange', 'banana', 'banana', 'apple', 'apple', 'apple']
+
+# sort in decreasing order of frequency
+def sort_by_freq_desc(array):
+    freq={}
+    for i in array:
+        if i in freq:
+            freq[i]+=1
+        else:
+            freq[i]=1 
+    return sorted(array, key=lambda x: (-freq[x], x)) # sort by decreasing frequency, then by value
+print(sort_by_freq_desc([4,5,6,5,4,3]))  # Output: [4, 4, 5, 5, 3, 6]
+
+# sort in decreasing order of frequency
+def sort_by_freq_desc(array):
+    freq={}
+    for i in array:
+        if i in freq:
+            freq[i]+=1
+        else:
+            freq[i]=1 
+    return sorted(array, key=lambda x: (-freq[x], -x)) # sort by decreasing frequency, then by value
+print(sort_by_freq_desc([4,5,6,5,4,3]))  # Output: [4, 4, 5, 5, 3, 6]
+# without using sort fn

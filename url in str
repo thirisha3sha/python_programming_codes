@@ -1,0 +1,14 @@
+# url in string example
+import re
+text = "Check out this link: https://www.example.com and also visit http://test.org for more info."
+urls = re.findall(r'(https?://[^\s]+)', text)
+print(urls)
+
+# method 2: using split
+def extract_urls(text):
+    words = text.split()
+    urls = [word for word in words if word.startswith('http://') or word.startswith('https://')]
+    return urls
+print(extract_urls(text))
+
+

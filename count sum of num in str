@@ -1,0 +1,18 @@
+# str='Days123bejhu456"
+ # o/p=21
+def num_count(s):
+    sum=0
+    for i in s:
+        if i.isdigit():
+            sum+=int(i)
+    return sum
+print(num_count('Days123bejhu456'))
+ 
+# method 2
+def num_count2(s):
+    sum=0
+    for i in s:
+        if '0'<= i <='9':
+            sum+=ord(i)-ord('0')
+    return sum
+print(num_count('Days123bejhu456'))

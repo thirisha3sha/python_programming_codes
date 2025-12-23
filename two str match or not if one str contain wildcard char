@@ -1,0 +1,11 @@
+# i/p='3s*a'
+# i/p2='3sha' o/p=true
+def wildcard_match(s1,s2):
+    if "*" not in s1:
+        return s1==s2
+    parts=s1.split('*')
+    start=parts[0]
+    end=parts[1]
+    return s2.startswith(start) and s2.endswith(end)
+print(wildcard_match('3s*a','3sha'))
+print(wildcard_match('a*d','avfdfdd'))

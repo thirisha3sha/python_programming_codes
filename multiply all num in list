@@ -1,0 +1,7 @@
+# multiply all num in list
+def multiply(lst):
+    result=1
+    for num in lst:
+        result*=num
+    return result
+print(multiply([1,2,3,4]))  # 24

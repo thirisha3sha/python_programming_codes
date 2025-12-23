@@ -1,0 +1,16 @@
+# median of arr --> median is the middle element in sorted array
+#method 1
+def median(arr):
+    arr.sort()
+    n=len(arr)
+    if n%2==0:
+        mid1=n//2
+        mid2=mid1-1
+        med=(arr[mid1]+arr[mid2])/2
+    else:
+        mid=n//2
+        med=arr[mid]
+    return med
+print(median([1,2,3,4,5]))  # Output: 3
+print(median([1,21,3,44,4,15]))  # 1st it wll sort the array then find median  0/p== 7.0
+

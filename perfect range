@@ -1,0 +1,64 @@
+# method 1
+'''
+def perfect_range(start,end):
+    perfect=[]
+    for i in range(start,end+1):
+        sum=0 
+        for j in range(1,i):
+            if i%j==0:
+                sum+=j
+        if sum==i:
+            perfect.append(i)
+    return perfect
+print(perfect_range(1,1000))    
+'''
+
+#method 2
+''' 
+class PerfectRange:
+    def __init__(self,start,end):
+        self.start=start
+        self.end=end
+    def check(self):
+        perfect=[]
+        for i in range(self.start,self.end+1):
+            sum=0 
+            for j in range(1,i):
+                if i%j==0:
+                    sum+=j
+            if sum==i:
+                perfect.append(i)
+        return perfect
+    def display(self):
+        list_perfect=self.check()
+        if list_perfect:
+            print(*list_perfect)
+        else:
+            print("no perfect number in the range")
+p=PerfectRange(1,1000)
+p.display()
+'''
+
+#method 3
+class PerfectRange:
+    @classmethod
+    def check(cls,start,end):
+        perfect=[]
+        for i in range(start,end):
+            sum=0
+            for j in range(1,i):
+                if i%j==0:
+                    sum+=j
+            if sum==i:
+                perfect.append(i)
+        return perfect
+    @classmethod
+    def display(cls,start,end):
+        list_perfect=cls.check(start,end) 
+        if list_perfect:
+            print(*list_perfect)
+        else:
+            print("no perfect num in the range")
+PerfectRange.display(1,1000)
+    
+    

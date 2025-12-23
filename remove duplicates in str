@@ -1,0 +1,10 @@
+# method 1
+def remove_dupli(s):
+    res=""
+    seen=set()
+    for ch in s:
+        if ch not in seen:
+            res+=ch
+            seen.add(ch)
+    return res
+print(remove_dupli("aabbccddddee"))

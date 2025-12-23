@@ -1,0 +1,28 @@
+# len of list
+def len_list(lst):
+    count=0 
+    for i in lst:
+        count+=1
+    return count
+print(len_list([1,2,3,4,5]))  # 5
+
+# method 2
+def len_list2(lst):
+    if not lst:
+        return 0
+    return 1+len_list2(lst[1:])
+print(len_list2([1,2,3,4,5]))  # 5
+
+# method 3
+def len_list3(lst):
+    return sum(1 for i in lst)
+print(len_list3([1,2,3,4,5]))  # 5
+
+# method 4
+# length of array
+def len_arr(arr):
+    count=0
+    for _ in arr:
+        count+=1    
+    return count
+print(len_arr([10,20,30,40,50]))  # 5

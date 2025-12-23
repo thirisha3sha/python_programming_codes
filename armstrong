@@ -1,0 +1,79 @@
+''' ARMSTRONG NUMBER: An Armstrong number (also called a narcissistic number)
+is a number that is equal to the sum of its digits each raised to the 
+power of the number of digits.
+
+Examples:
+153 → 1³ + 5³ + 3³ = 153 → ✅ Armstrong
+9474 → 9⁴ + 4⁴ + 7⁴ + 4⁴ = 9474 → ✅ Armstrong'''
+#method 1
+'''
+def armstrong(n):
+    temp=n
+    sum_of_pow=0
+    digits=len(str(n))
+    while n>0:
+        digit=n%10
+        sum_of_pow+=digit**digits
+        n//=10
+    return sum_of_pow==temp
+def display(n):
+    if armstrong(n):
+        print(n,"is armstrong")
+    else:
+        print(n,"is not armstrong")
+display(153)
+display(15)
+'''
+#method 2
+'''
+class Armstrong:
+    def __init__(self,n):
+        self.n=n
+    def check(self):
+        temp=self.n
+        sum=0
+        digits=len(str(self.n))
+        while self.n>0:
+            digit=self.n%10
+            sum+=digit**digits
+            self.n//=10
+        return sum==temp
+    def display(self):
+        if self.check():
+            print("armstrong !")
+        else:
+            print("not armstrong !")
+a=Armstrong(153)
+a.display()
+Armstrong(156).display()
+'''
+#method 3
+
+class Armstrong:
+    @classmethod
+    def check(cls,n):
+        temp=n
+        sum=0 
+        digits=len(str(n))
+        while n>0:
+            digit=n%10
+            sum+=digit**digits
+            n//=10
+        return sum==temp
+    @classmethod
+    def display(cls,n):
+        if cls.check(n):
+            print("armstrong!!!")
+        else:
+            print("not armstrong!!")
+Armstrong.display(153)
+Armstrong.display(146)
+
+#method 4
+def armstrong_check(n):
+    n_str=str(n)
+    digits=len(n_str)
+    sum_of_pow=sum(int(i)** digits for i in n_str)
+    return sum_of_pow==n
+print(armstrong_check(15))
+print(armstrong_check(153))

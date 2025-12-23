@@ -1,0 +1,8 @@
+# reverse words in str
+def reverse_words(s):
+    words=s.split()
+    rev=words[::-1]
+    return ' '.join(rev)
+print(reverse_words("Hello World from Python"))  # PythonfromWorldHello
+
+# method 2

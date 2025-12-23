@@ -1,0 +1,31 @@
+# reverse a list
+def reverse(lst):
+    return lst[::-1]
+print(reverse([1, 2, 3, 4, 5]))  # [5, 4, 3, 2, 1]
+
+# method 2
+def reverse2(lst):
+    rev=[]
+    for i in lst:
+        rev.insert(0,i)
+    return rev
+print(reverse2([1, 2, 3, 4, 5]))  # [5, 4, 3, 2, 1]
+
+# method 3
+def reverse3(lst):
+    left=0
+    right=len(lst)-1
+    while left<right:
+        lst[left],lst[right]=lst[right],lst[left]
+        left+=1
+        right-=1
+    return lst
+print(reverse3([1, 2, 3, 4, 5]))  # [5, 4, 3, 2, 1]
+
+# method 4
+def reverse4(lst):
+    rev=[]
+    for i in range(len(lst)-1,-1,-1):
+        rev.append(lst[i])
+    return rev
+print(reverse4([1, 2, 3, 4, 5]))  # [5, 4, 3, 2, 1]

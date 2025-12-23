@@ -1,0 +1,14 @@
+# find all repeating elements in arr
+def repeating_elements(arr):
+    freq={}
+    for i in arr:
+        if i in freq:
+            freq[i]+=1
+        else:
+            freq[i]=1
+    result=[]
+    for i in arr:
+        if freq[i]>1 and i not in result:
+            result.append(i)
+    return result
+print(repeating_elements([4,2,1,2,3,4,5,1]))  # Output: [4, 2, 1]  dict={4:2,2:2,1:2,3:1,5:1}

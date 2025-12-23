@@ -1,0 +1,10 @@
+def even_odd(arr):
+    even_count=0
+    odd_count=0
+    for i in range(len(arr)):
+        if arr[i]%2==0:
+            even_count+=1
+        else:
+            odd_count+=1
+    return even_count,odd_count
+print(even_odd([2,4,56,23,78,98]))

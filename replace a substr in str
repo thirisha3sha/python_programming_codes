@@ -1,0 +1,35 @@
+# replace substring in a str / replace a particular word in a string
+
+"""
+text="hi hello hi"
+res=text.replace("hi","hey")  # replace all findings
+res1=text.replace("hi","hey",1) # replace on;y thr 1st occurence
+print(res)
+print(res1)
+
+"""
+# using slicing concept
+s="i am 3sha hello"
+old="3sha"
+new="4sha"
+index=s.find(old) # stores index position
+if index!=-1:
+    s=s[:index]+ new+ s[index+len(old):]
+print(s)
+
+# using regex method
+import re
+s1="cat mat bat"
+change=re.sub("at","ow",s1)
+print(change)
+
+# with case sensitive
+import re
+s2="hey HII hii"
+s3="thirisha"
+result=re.sub("hii","there",s2)
+result1=re.sub("hii","there",s2,flags=re.IGNORECASE)
+res2=re.sub("thiri","3",s3)
+print(result)
+print(result1)
+print(res2)

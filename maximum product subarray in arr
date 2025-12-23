@@ -1,0 +1,14 @@
+# maximum product subarray in arr
+def max_prod_subarray(arr):
+    if not arr:
+        return 0
+    max_prod=min_prod=arr[0] # 2 
+    result=arr[0]  # 2 #6
+    for num in arr[1:]:
+        if num<0:
+            max_prod,min_prod=min_prod,max_prod  # i=2-->> swap -- max_prod=3,min_prod=6
+        max_prod=max(num,num*max_prod) # max(3,2*3)=6... max(-2,-2*3)=-2..max(4,4*-2)=4..
+        min_prod=min(num,num*min_prod) # min(3,2*3)=3...min(-2,-2*6)=-12..min(4,4*-12)=-48..
+        result=max(result,max_prod) # max(2,6)=6...max(6,-2)=6..max(6,4)=6..
+    return result
+print(max_prod_subarray([2,3,-2,4]))  # Output: 6

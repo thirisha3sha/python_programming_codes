@@ -1,0 +1,33 @@
+# Toggle means “change to the opposite state.”
+s="heLLO WoRld"
+toggle=s.swapcase()
+print(toggle)
+
+# methid 2
+s="heLLO 123 WoRld"
+res=""
+for i in s:
+    if i.islower():
+        res+=i.upper()
+    elif i.isupper():
+        res+=i.lower()
+    else:
+        res+=i
+print(res)
+
+# method 3 --using list comphrension
+s="heLLO 864890 WoRld 08923"
+toggled=''.join([i.lower() if i.isupper() else i.upper() if i.islower() else i for i in s])
+print(toggled)
+
+# method 4
+s1="heLLO 123 WoRld"
+res=""
+for i in s1:
+    if 'a'<=i<='z' :
+        res+=i.upper()
+    elif 'A'<=i<='Z':
+        res+=i.lower()
+    else:
+        res+=i
+print(res)

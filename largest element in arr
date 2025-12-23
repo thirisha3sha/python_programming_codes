@@ -1,0 +1,47 @@
+# given an arr of size n find the largest element in the arr
+# method 1--> largest elemeni in arr
+def maximum(arr):
+    max=arr[0]
+    for i in arr:
+        if i>max:
+            max=i
+    return max
+print(maximum([3,5,1,8,0,-1,4]))
+
+
+# method 2
+def maximum(arr):
+    arr.sort()
+    return arr[-1]
+print(maximum([3,5,1,8,0,4]))
+# method 3
+def maximum(arr):
+    return max(arr)     
+print(maximum([3,5,1,8,0,4]))
+# method 4
+def maximum(arr):
+    return sorted(arr)[-1]
+print(maximum([3,5,1,8,4]))
+# method 5
+class Mximum:
+    def __init__(self,arr):
+        self.arr=arr
+    def find_max(self):
+        max=self.arr[0]
+        for i in self.arr:
+            if i>max:
+                max=i
+        return max
+m=Mximum([3,5,11,8,4])
+print(m.find_max())
+
+# method 6
+class Maximum:
+    @classmethod
+    def find_max(cls,arr):
+        max=arr[0]
+        for i in arr:
+            if i>max:
+                max=i 
+        return max
+print(Maximum.find_max([13,5,11,8,4]))

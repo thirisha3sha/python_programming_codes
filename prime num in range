@@ -1,0 +1,83 @@
+# method 1:
+''' 
+def prime(start,end):
+    primes=[]
+    for i in range(start,end+1):
+        if i>1:
+            for j in range(2,i):
+                if i%j==0:
+                    break
+                else:
+                    primes.append(i)
+                    break
+    return primes
+print(prime(10,50))
+'''
+
+# method 2:
+''' 
+def prime1(n):
+    if n>2:
+        for i in range(2,n):
+            if n%i==0:
+                return False
+        return True
+    else:
+        return False
+def prime_range(start,end):
+    return [i for i in range(start,end+1) if prime1(i)]
+def display(start,end):
+    primes=prime_range(start,end)
+    if primes:
+        print(*primes)
+    else:
+        print("no prime in the range")
+display(10,20)
+ '''
+ # method 3:
+'''
+class PrimeNum:
+    def __init__(self,start,end):
+         self.start=start
+         self.end=end
+    def check(self,n):
+         if n>2:
+             for i in range(2,n):
+                 if n%i==0:
+                     return False
+             return True
+         else:
+             return False
+    def prime_range(self):
+        return [i for i in range(self.start,self.end+1) if self.check(i)]
+    def display(self):
+        primes=self.prime_range()
+        if primes:
+            print(*primes)
+        else:
+            print("no prime in the range")
+p=PrimeNum(20,40)
+p.display()   
+'''
+# method 4:
+class Primenum:
+    @classmethod
+    def check(cls,n):
+        if n>2:
+            for i in range(2,n):
+                if n%i==0:
+                    return False
+            return True
+        else:
+            return False
+    @classmethod 
+    def prime_range(cls,start,end):
+        return [i for i in range(start,end+1) if cls.check(i)]
+    @classmethod
+    def display(cls,start,end):
+        primes=cls.prime_range(start,end)
+        if primes:
+            print(*primes)
+        else:
+            print("no prime in the range")
+Primenum.display(30,50)

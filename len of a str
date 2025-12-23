@@ -1,0 +1,20 @@
+# length of string
+def len_str(s):
+    count=0 
+    for char in s:
+        count+=1
+    return count
+print(len_str("Hello World"))  # 11
+
+# method 2
+def len_str2(s):    
+    if s=='':
+        return 0
+    return 1+len_str2(s[1:])
+print(len_str2("Hello World"))  # 11
+
+# method 3
+def len_str3(s):
+    return sum(1 for char in s) 
+print(len_str3("Hello World"))  # 11
+

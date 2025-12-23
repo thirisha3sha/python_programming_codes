@@ -1,0 +1,44 @@
+# method 1
+def anagram(s1,s2):
+    return sorted(s1)==sorted(s2)
+print(anagram("ate","tea"))
+
+# using collections
+from collections import Counter
+def anagram2(s1,s2):
+    print(Counter(s1))
+    print(Counter(s2))
+    if Counter(s1)==Counter(s2):
+        print("Anagrams!")
+    else:
+        print("Not anagrams")
+anagram2("listen","silent")
+
+# using dict
+def anagram_check(s1,s2):
+    if len(s1)!=len(s2):
+        return False
+    freq1={}
+    freq2={}
+    for ch in s1:
+        freq1[ch]=freq1.get(ch,0)+1
+    for ch in s2:
+        freq2[ch]=freq2.get(ch,0)+1
+    return freq1==freq2
+print(anagram_check("care","race"))
+
+# method 4
+def anagram3(s1,s2):
+    if len(s1)!=len(s2):
+        return False
+    freq={}
+    for ch in s1:
+        freq[ch]=freq.get(ch,0)+1
+    for ch in s2:
+        if ch not in freq or freq[ch]==0:
+            return False
+        freq[ch]-=1
+    return True
+print(anagram3("tan","ant"))
+            
+        

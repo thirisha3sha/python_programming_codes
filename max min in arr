@@ -1,0 +1,11 @@
+def max_min(arr):
+    maximum=arr[0]
+    minimum=arr[0]
+    for i in arr:
+        if i>maximum:
+            maximum=i
+        if i<minimum:
+            minimum=i
+    return maximum,minimum
+print(max_min([23,56,7898,33,5]))
+print(*max_min([23,56,7898,33,5]))  #unpack(fmt, buffer)

@@ -1,0 +1,31 @@
+# balances parenthesis
+# method 1
+def balance_parenthesis(s):
+    stack=[]     # (
+    pairs={')':'(','}':'{',']':'['}
+    for i in s:
+        if i in "({[":
+            stack.append(i)
+        elif i in ")}]":
+            if not stack or stack[-1]!=pairs[i]: # empyt or stack[(]!=pairs[)] ===>>'('!='('
+                return False
+            stack.pop()  # remove (
+    return not stack # true if stack is empty(balanced)
+print(balance_parenthesis("()"))
+print(balance_parenthesis("(])"))
+print(balance_parenthesis("[()]"))
+
+# method 2
+def balance(s):
+    while len(s)!=0:
+        s=s.replace('()','')
+        s=s.replace('[]','')
+        s=s.replace('{}','')
+    if len(s)==0:
+        return True
+    else:
+        return False
+print(balance_parenthesis("()"))
+print(balance_parenthesis("(])"))
+print(balance_parenthesis("[()]"))
+        

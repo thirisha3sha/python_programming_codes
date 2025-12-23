@@ -1,0 +1,17 @@
+# find arr are disjoint or not
+# Two arrays (or sets) are disjoint if they have no elements in common.
+
+def disjoint(a1,a2):
+    return set(a1).isdisjoint(set(a2))
+print(disjoint([1, 2, 3], [4, 5, 6]))   # True
+print(disjoint([1, 2, 3], [3, 4, 5])) 
+
+# method 2
+def disjoint1(a1,a2):
+    for i in range(0,len(a1)):
+        for j in range(0,len(a2)):
+            if a1[i]==a2[j]:
+                return False
+    return True
+print(disjoint1([1, 2, 3], [4, 5, 6]))   # True
+print(disjoint1([1, 2, 3], [3, 4, 5])) 

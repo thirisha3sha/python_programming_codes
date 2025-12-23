@@ -1,0 +1,24 @@
+# common letters in 2 str
+# i/p1='apple'
+# i/p2='grape'  
+# o/p=['a','p','e'] =3
+# method 1
+'''
+def common_letters(str1,str2):
+    common=set()
+    for char in str1:
+        if char in str2:
+            common.add(char)
+    return list(common),len(common)
+print(common_letters('apple','grape'))
+print(common_letters('hello','world'))
+'''
+
+# method 2
+def common_letters_set(str1,str2):
+    set1=set(str1)
+    set2=set(str2)
+    common=set1.intersection(set2)
+    return common,len(common)
+print(common_letters_set('apple','grape'))
+print(common_letters_set('hello','world'))

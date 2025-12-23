@@ -1,0 +1,24 @@
+# serach an element in arr  --> returns index if found else -1
+def search_element(array,element):
+    for i in range(len(array)):
+        if array[i]==element:
+            return i
+    return -1
+print(search_element([1,2,3,4,5],3))  # Output: 2
+print(search_element(['a','b','c','d'], 'e'))  # Output: -1
+
+# method 2 using in operator
+def search_element1(array,element):
+    if element in array:
+        return array.index(element)
+    else:
+        return -1
+print(search_element1([1,2,3,4,5],3))  # Output: 2
+
+# method 3 using try-except
+def search_element2(array,element):
+    try:
+        return array.index(element)
+    except ValueError:
+        return -1
+print(search_element2(['a','b','c','d'], 'e'))  # Output: -1

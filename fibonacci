@@ -1,0 +1,109 @@
+'''FIBONACCI SERIES: The Fibonacci series is a sequence of numbers 
+in which each number is the sum of the two preceding ones, starting from 0 and 1.
+
+F(0) = 0
+F(1) = 1
+F(n) = F(n−1) + F(n−2) for n ≥ 2
+'''
+#method 1 # without temp variable
+'''
+def fibonacci(n):
+    fibo=[]
+    a,b=0,1
+    for i in range(n):
+        fibo.append(a)
+        a,b=b,a+b
+    return fibo
+print(fibonacci(10))
+'''
+#method 2 # with temp variable
+'''
+def fibonacci(n):
+    a=0
+    b=1
+    for i in range(n):
+        print(a,end=" ")
+        temp=a
+        a=b
+        b=temp+b
+fibonacci(10)
+'''
+
+#method 3 # using recursion
+'''
+def fibonacci(n):
+    if n<=0:
+        return 0
+    elif n==1:
+        return 1
+    else:
+        return fibonacci(n-1)+fibonacci(n-2)
+print([fibonacci(i) for i in range(11)])
+print(fibonacci(10)) # at place 10 ... 55 is the value
+print(fibonacci(7))  # at place 7 ... 13 is the value
+
+'''
+#method 4 # using generator --> yields one value at a time
+'''
+def fibonacci(n):
+    a,b=0,1
+    for i in range(n):
+        yield a # yield is used to return a generator object
+        a,b=b,a+b
+print(list(fibonacci(10)))  # converting generator object to list to display all values
+print(tuple(fibonacci(10)))     # converting generator object to tuple to display all values
+print(fibonacci(10))         # prints generator object info 
+print(next(fibonacci(10)))   #    prints first value from generator object
+print(next(fibonacci(20)))   #    prints first value from generator object
+print(next(fibonacci(5)))    #    prints first value from generator object
+ # accesing any positional value is not possible directly from generator object
+print(*fibonacci(10)) # unpacking generator object to print all values
+
+'''
+# unpacking generator object to print all values
+'''
+def fibonacci(n):
+    a,b=0,1
+    for i in range(n):
+        yield a # yield is used to return a generator object
+        a,b=b,a+b
+print(fibonacci(10)) # prints generator object info
+print(*fibonacci(10)) # unpacking generator object to print all values
+'''
+
+# method 5 # using class and generator
+'''
+class Fibonacci:
+    def __init__(self,n):
+        self.n=n
+    def generate(self):
+        a,b=0,1
+        for i in range(self.n):
+            yield a
+            a,b=b,a+b
+f=Fibonacci(20)
+print(*f.generate())
+'''
+# method 6 
+'''
+class Fibonacci:
+    @classmethod
+    def generate(cls,n):
+        a,b=0,1
+        for i in range(n):
+            yield a
+            a,b=b,a+b
+print(*Fibonacci.generate(15))
+'''
+# method 7 
+class Fibonacci:
+    @staticmethod # static method as it does not use class or instance variables -->here n is passed as parameter 
+    def generate(n):
+        a,b=0,1
+        for i in range(n):
+            yield a
+            a,b=b,a+b
+print(*Fibonacci.generate(12))
+print(*Fibonacci.generate(7))
+# uses of static method when method logic is independent of class/instance variables 
+ 

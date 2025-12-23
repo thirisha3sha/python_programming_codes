@@ -1,0 +1,42 @@
+# str palindrome
+'''
+def is_palindrome(s):
+    s=s.lower().replace(" ","")  # Normalize the string
+    return s == s[::-1]
+print(is_palindrome("A man a plan a canal Panama"))  # True
+print(is_palindrome("hello"))  # False
+'''
+# method 2
+'''
+import re
+def palindrome(s):
+    left=0
+    s=re.sub(r'[^a-zA-Z0-9]', '', s)  # Remove non-alphanumeric characters
+    s=s.lower().replace(" ","")  # Normalize the string
+    right=len(s)-1
+    while left<right:
+        if s[left]!=s[right]:
+            return False
+        left+=1
+        right-=1
+    return True
+print(palindrome("A man a plan a canal Panama"))  # True
+print(palindrome("A man, a plan, a canal: Panama"))
+print(palindrome("madam"))
+
+'''
+# method 3
+
+def palindrome(s):
+    left=0
+    s=s.lower().replace(" ","")  # Normalize the string
+    right=len(s)-1
+    while left<right:
+        if s[left]!=s[right]:
+            return False
+        left+=1
+        right-=1
+    return True
+print(palindrome("A man a plan a canal Panama"))  # True
+print(palindrome("madam"))
+print(palindrome("1221"))

@@ -1,0 +1,31 @@
+# swap any 2 elements in lst
+def swap_elements(array,index1,index2):
+    array[index1],array[index2]=array[index2],array[index1]
+    return array
+print(swap_elements([1,2,3,4,5],0,3))
+print(swap_elements(['a','b','c','d'],1,2))
+
+# swap any 2 elements in lst using temp variable
+def swap_elements_temp(array,index1,index2):
+    temp=array[index1]
+    array[index1]=array[index2]
+    array[index2]=temp
+    return array
+print(swap_elements_temp([10,20,30,40],2,3))
+print(swap_elements_temp(['x','y','z'],0,2))
+
+# swap any 2 elements in lst using tuple unpacking
+def swap_elements_tuple(array,index1,index2):
+    (array[index1],array[index2])=(array[index2],array[index1])
+    return array    
+print(swap_elements_tuple([7,8,9,10],1,2))
+print(swap_elements_tuple(['p','q','r','s'],0,3))
+
+# swap the elements without index
+def swap_elements_no_index(array,elem1,elem2):
+    index1=array.index(elem1)
+    index2=array.index(elem2)
+    array[index1],array[index2]=array[index2],array[index1]
+    return array
+print(swap_elements_no_index([100,200,300,400],200,400))
+print(swap_elements_no_index(['apple','banana','cherry'], 'banana','cherry'))

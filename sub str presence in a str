@@ -1,0 +1,16 @@
+# sub string presence in a string
+def check(str,substr):
+    if substr in str:
+        return True
+    else:
+        return False
+string = "Hello, welcome to the world of Python programming."
+substring = "Python"
+result = check(string, substring)
+print(check("hello world","world"))  # True
+print(result)  # True
+
+#method 2
+def check2(str,substr):
+    return str.find(substr) != -1   
+print(check2("hello world","world"))  # True

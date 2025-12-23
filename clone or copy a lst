@@ -1,0 +1,36 @@
+# clone or copy a lst
+# using slicing
+'''
+def copy_lst(original):
+    copy=original[:]
+    original[2]=89
+    return original,copy
+print(copy_lst([1,2,3]))
+'''
+
+# using lst operator
+'''
+def copy_lst(original):
+    copy=list(original)
+    original[1]=78
+    return copy,original
+print(copy_lst([1,2,3]))
+'''
+# method 3--copy () method  -->>shallow copy
+'''
+def copy_lst(original):
+    copy=original.copy()
+    original[0]=67
+    return copy,original
+print(copy_lst([1,2,3]))
+
+'''
+#method 4-->>deep copy  for nested list
+'''
+import copy
+def copy_lst(original):
+    copy1=copy.deepcopy(original)
+    original[0][0]=56
+    return original,copy1
+print(copy_lst([[1,2,3],[4,5,6]]))
+'''

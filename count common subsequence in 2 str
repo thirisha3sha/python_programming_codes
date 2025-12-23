@@ -1,0 +1,16 @@
+# i/p 1='ABC' i/p2='AB'
+# O/P=['A','B','AB'] =3
+def common_sub(s1,s2):
+    res=[]
+    for i in range(len(s1)):
+        for j in range(i+1,len(s1)+1):
+            sub=s1[i:j]
+            if sub in s2 and sub not in res:
+                res.append(sub)
+    return res,len(res)
+print(common_sub("ABC","AB"))
+print(common_sub("ABC","A"))
+print(common_sub("ABC","ABC"))
+print(common_sub("ABC","ABCD"))
+
+        

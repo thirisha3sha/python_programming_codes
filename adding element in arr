@@ -1,0 +1,13 @@
+# given an arr of n integers .prgm to add an array element at begining and at end at specified position
+def add_element(arr,element,position):
+    if position=='b':
+        arr.insert(0,element)
+    elif position=='e':
+        arr.append(element)
+    elif position=="m":
+        mid=len(arr)//2
+        arr.insert(mid,element)     
+    return arr
+print(add_element([1,2,3,4,5],0,'b'))  # Output: [0, 1, 2, 3, 4, 5] at specified position
+print(add_element([1,2,3,4,5],78,'e')) 
+print(add_element([1,2,3,4,5],56,'m')) 

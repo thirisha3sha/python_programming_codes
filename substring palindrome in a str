@@ -1,0 +1,22 @@
+# i/p:babad 
+# o/p:first palindromic substring
+def substring_palindrome(s):
+    n=len(s)
+    for i in range(n):
+        for j in range(i+1,n):
+            sub=s[i:j+1]
+            if check(sub):
+                return sub
+    return -1
+def check(n):
+    s=str(n)
+    left=0
+    right=len(s)-1
+    while left<right:
+        if s[left]!=s[right]:
+            return False
+        left+=1
+        right-=1
+    return True
+print(substring_palindrome('babad'))
+print(substring_palindrome('baabcde'))

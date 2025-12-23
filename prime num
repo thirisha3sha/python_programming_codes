@@ -1,0 +1,54 @@
+''' definition of a prime number
+A prime number is a natural number greater than 1 that cannot be formed by multiplying two 
+ smaller natural numbers '''
+#method 1
+'''
+def prime(n):
+    if n<2:
+        return False
+    for i in range(2,n):
+        if n%i==0:
+            return False
+    return True
+print(prime(28))
+print(prime(17))
+ ''' 
+
+# method 2: optimized approach
+class Prime_check:
+    def __init__(self,n):
+        self.n=n
+    def check(self):
+        if self.n<2:
+            return False
+        for i in range(2,self.n):
+            if self.n%i==0:
+                return False
+        return True
+    def display(self):
+        if self.check():
+            print(self.n,"is a prime number")
+        else:
+            print(self.n,"is not a prime number")
+p=Prime_check(3)
+p.display()
+p1=Prime_check(10)
+p1.display()
+
+#method 3 
+class Primenum:
+    @classmethod
+    def check(cls,n):
+        if n<2:
+            return False
+        for i in range(2,n):
+            if n%i==0:
+                return False
+        return True
+    @classmethod
+    def display(cls,n):
+        if cls.check(n):
+            print(n,"is a prime number")
+        else:   
+            print(n,"is not a prime number")
+Primenum.display(67)

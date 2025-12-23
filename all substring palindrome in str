@@ -1,0 +1,47 @@
+# all possible substring palindrome in a string
+def possible_substring(s):
+    res=[]
+    n=len(s)
+    for i in range(n):
+        for j in range(i+1,n):
+            sub=s[i:j+1]
+            if check(sub):
+                if sub not in res:
+                    res.append(sub)
+    return res,len(res)
+def check(n):
+    s=str(n)
+    left=0
+    right=len(s)-1
+    while left<right:
+        if s[left]!=s[right]:
+            return False
+        left+=1
+        right-=1
+    return True
+print(possible_substring('babad'))
+
+# method 2
+# all possible substring palindrome in a string
+def possible_substring1(s):
+    s=str(s)
+    res=set()
+    n=len(s)
+    for i in range(n):
+        for j in range(i+1,n):
+            sub=s[i:j+1]
+            if check(sub):
+                    res.add(sub)
+    return res,len(res)
+def check(n):
+    s=str(n)
+    left=0
+    right=len(s)-1
+    while left<right:
+        if s[left]!=s[right]:
+            return False
+        left+=1
+        right-=1
+    return True
+print(possible_substring1('babad'))
+print(possible_substring1(12321))

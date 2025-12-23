@@ -1,0 +1,23 @@
+# palindome num
+def palindrome_check(num):
+    temp=num
+    rev=0
+    while temp>0:
+        digit=temp%10
+        rev=rev*10+digit
+        temp//=10
+    if num==rev:
+        return True
+    else:
+        return False
+print(palindrome_check(121))
+print(palindrome_check(1234))
+
+# method 2
+def check(n):
+    s=str(n)
+    if s==s[::-1]:
+        print("palindrome")
+    else:
+        print("not palindrome")
+check(4554)

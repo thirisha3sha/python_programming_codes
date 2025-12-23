@@ -1,0 +1,14 @@
+def reverse(s):
+    return s[::-1]
+print(reverse("Hello World"))  # dlroW olleH
+
+# method 2
+def reverse2(s):
+    rev=' '
+    for char in s:
+        rev=char+rev
+    return rev.strip() # strip to remove leading space
+print(reverse2("Hello World"))  # dlroW olleH 
+print(reverse2("23424"))
+
+# 

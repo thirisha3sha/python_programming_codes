@@ -1,0 +1,28 @@
+# count the frequency of occurrence of an element in a array
+def count_freq(array,element):
+    count=0
+    for i in array:
+        if i==element:
+            count+=1
+    return count
+print(count_freq([1,2,3,4,5,1,2,1,1],1))  # Output: 4
+print(count_freq(['a','b','c','a','a','d'], 'a'))  # Output: 3
+
+# method 2 using list method
+def count_freq_method2(array,element):
+    return array.count(element)
+print(count_freq_method2([1,2,3,4,5,1,2,1,1],1))  # Output: 4  
+
+# method 3 count all elements using dictionary
+def count_all(array):
+    freq={}
+    for i in array:
+        if i in freq:
+            freq[i]+=1
+        else:
+            freq[i]=1
+    return freq
+print(count_all([1,2,3,4,5,1,2,1,1]))  # Output: {1: 4, 2: 2, 3: 1, 4: 1, 5: 1}
+print(count_all(['a','b','c','a','a','d']))  # Output: {'a': 3, 'b': 1, 'c': 1, 'd': 1}
+
+    

@@ -1,0 +1,13 @@
+# determine can all num of arr be made equal
+# i/p [50,75,100]
+def check(arr):
+    n=len(arr)
+    for i in range(0,n):
+        while arr[i]%2==0:
+            arr[i]//=2
+        while arr[i]%3==0:
+            arr[i]//=3
+    if arr[i]!=arr[0]:
+        return False
+    return True
+print(check([50,75,100]))

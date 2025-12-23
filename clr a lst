@@ -1,0 +1,10 @@
+# clr a list
+def to_clr(lst):
+    lst.clear()
+    return lst
+print(to_clr([1, 2, 3, 4, 5]))  # Output: []
+
+# method 2
+def to_clr_alternate(lst):
+    return lst[:0]
+print(to_clr_alternate([1, 2, 3, 4, 5]))  # Output: []

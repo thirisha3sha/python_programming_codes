@@ -1,0 +1,16 @@
+# avg of all elements in arr
+#method 1
+def avg_all(arr):
+    total=sum(arr)
+    avg=total/len(arr)
+    return avg
+print(avg_all([1,2,3,4,5]))  # Output: 3.0
+print(avg_all([12,324,35,64,85]))
+
+# method 2
+def avg_all(arr):
+    sum=0 
+    for i in arr:
+        sum+=i
+    return sum/len(arr)
+print(avg_all([1,2,3,4,5]))

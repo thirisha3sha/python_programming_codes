@@ -1,0 +1,10 @@
+# find ascii value of char
+def ascii_value(ch):
+    return ord(ch)
+print(ascii_value('s'))
+
+# for str
+def ascii_value1(s):
+    dict={ch : ord(ch) for ch in s}
+    return dict
+print(ascii_value1('hello'))

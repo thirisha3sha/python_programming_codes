@@ -1,0 +1,33 @@
+# num palindrome
+'''
+def num_palindrome(n):
+    s=str(n)  # Convert number to string
+    left=0
+    right=len(s)-1
+    while left<right:
+        if s[left]!=s[right]:
+            return False
+        left+=1
+        right-=1
+    return True
+print(num_palindrome(121))  # True
+print(num_palindrome(123))  # False
+'''
+# method 2
+'''
+def num_palindrome(n):
+    s=str(n)  # Convert number to string
+    return s==s[::-1]
+print(num_palindrome(121))  # True
+'''
+ 
+# method 3
+def num_palindrome(n):
+    temp=n
+    rev=0 
+    while n>0:
+        digit=n%10
+        rev=rev*10+digit
+        n//=10
+    return temp==rev
+print(num_palindrome(121))  # True

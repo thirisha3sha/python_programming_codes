@@ -1,0 +1,57 @@
+# method 1 
+def spcl_count(s):
+    count=0 
+    for char in s:
+        if not char.isalnum() and not char.isspace():
+            count+=1
+    return count
+print(spcl_count("Hello, World! @2024"))  # 3
+print(spcl_count("No special#chars$here."))  # 3
+
+# method 2
+def count(s):
+    vowels="aeiouAEIOU"
+    v_count=len([char for char in s if char in vowels])
+    c_count=len([char for char in s if char.isalpha() and char not in vowels])
+    d_count=len([char for char in s if char.isdigit()])
+    s_count=len([char for char in s if not char.isalnum() and not char.isspace()])
+    return v_count,c_count,d_count,s_count
+string="Hello, World! 123 @2024"
+v,c,d,s=count(string)
+print("Vowels:",v)  # Vowels: 3
+print("Consonants:",c)  # Consonants: 7 
+print("Digits:",d)  # Digits: 7
+print("Special Characters:",s)  # Special Characters: 3
+
+#method 3
+def count(s):
+    v_count=0
+    c_count=0
+    d_count=0
+    s_count=0
+    vow=[]
+    cons=[]
+    dig=[]
+    spcl=[]
+    vowels="aeiouAEIOU"
+    for char in s:
+        if char.isalpha():
+            if char in vowels:
+                v_count+=1
+                vow.append(char)
+            else:
+                c_count+=1
+                cons.append(char)
+        elif char.isdigit():
+            d_count+=1
+            dig.append(char)
+        elif not char.isspace():
+            s_count+=1
+            spcl.append(char)
+    return v_count,c_count,d_count,s_count,vow,cons,dig,spcl
+string="Hello, World! 123 @2024"
+v,c,d,s,vow,cons,dig,spcl=count(string)
+print("Vowels:",v,vow)  # Vowels: 3 ['e', 'o', 'o']
+print("Consonants:",c,cons)  # Consonants: 7 ['H', 'l', 'l', 'W', 'r', 'l', 'd']
+print("Digits:",d,dig)  # Digits: 7 ['1', '2', '3', '2', '0', '2', '4']
+print("Special Characters:",s,spcl)  # Special Characters: 3 [',

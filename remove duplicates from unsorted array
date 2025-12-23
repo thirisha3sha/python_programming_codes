@@ -1,0 +1,16 @@
+# you are given an unsorted array of n integers which may contain duplicates .
+# your task is to remove the duplicates and return the new length of the array....
+# do not use any extra space for this task .need to do modify in the given array 
+def remove_duplicates(arr):
+    n=len(arr)
+    if n==0:
+        return 0
+    arr.sort()
+    index=1 
+    for i in range(1,n):
+        if arr[i]!=arr[i-1]:
+            arr[index]=arr[i]
+            index+=1
+    return index
+print(remove_duplicates([4,2,1,2,3,4,5,1]))
+

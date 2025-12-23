@@ -1,0 +1,11 @@
+# calculate the freq of char in str
+# method 1
+def freq(s):
+    dict={}
+    for i in s:
+        if i in dict:
+            dict[i]+=1
+        else:
+            dict[i]=1
+    return dict
+print(freq("hello world"))

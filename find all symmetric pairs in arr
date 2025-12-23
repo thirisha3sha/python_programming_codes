@@ -1,0 +1,21 @@
+# find all symmetric pairs in arr
+# i/p=[(1, 2), (3, 4), (2, 1), (4, 3), (5, 6)]
+# o/p=[(1, 2), (3, 4)]
+def symmetric(pairs):
+    s=set()
+    for (x,y) in pairs:
+        s.add((x,y))
+        if (y,x) in s:
+            print((x,y))
+symmetric([(1, 2), (3, 4), (2, 1), (4, 3), (5, 6)])
+
+def symmetric1(pairs):
+    seen={}
+    res=[]
+    for a,b in pairs:
+        if (b,a) in seen:
+            res.append((b,a))
+        else:
+            seen[(a,b)]=True
+    return res
+print(symmetric([(1, 2), (3, 4), (2, 1), (4, 3), (5, 6)]))

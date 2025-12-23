@@ -1,0 +1,24 @@
+# remove nth occurence of word from lst
+def remove_word(arr,word,n):
+    count=0
+    for i in range(len(arr)):
+        if arr[i]==word:
+            count+=1
+            if count==n:
+                arr.pop(i)
+                break
+    return arr
+print(remove_word(['apple','banana','orange','apple','grape','apple'],'apple',2))  # ['apple', 'banana', 'orange', 'grape', 'apple']
+
+# method 2
+def remove_word2(arr,word,n):
+    count=0 
+    res=[]
+    for i in arr:
+        if i==word:
+            count+=1
+            if count==n:
+                continue
+        res.append(i)
+    return res
+print(remove_word2(['apple','banana','orange','apple','grape','apple'],'apple',2))  # ['apple', 'banana', 'orange', 'grape', 'apple']

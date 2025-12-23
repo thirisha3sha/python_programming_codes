@@ -1,0 +1,23 @@
+# minimum scalar product one arr is ascending and another should be in descending
+def ascending_sort(arr,n):
+    for i in range(n):
+        for j in range(i+1,n):
+            if arr[i]>arr[j]:
+                arr[i],arr[j]=arr[j],arr[i]
+    return arr
+def descending_sort(arr,n):
+    for i in range(n):
+        for j in range(i+1,n):
+            if arr[i]<arr[j]:
+                arr[i],arr[j]=arr[j],arr[i]
+    return arr
+def mini_scalar_product(a1,a2):
+    n1=len(a1)
+    n2=len(a2)
+    a1_sort=ascending_sort(a1,n1)
+    a2_sort=descending_sort(a2,n2)
+    prod=0
+    for i in range(n1):
+        prod+=a1_sort[i]*a2_sort[i]
+    return prod
+print(mini_scalar_product([10,30,40,20], [2,4,5,1]))

@@ -1,0 +1,27 @@
+# maximum scalar product of 2 vectors in array
+''' i/p1=[10,30,40,20]
+ i/p2=[2,4,5,1]
+ o/p=370'''
+def max_scalar_product(a1,a2):
+    a1_sort=sorted(a1)
+    a2_sort=sorted(a2)
+    return sum(x*y for x,y in zip(a1_sort,a2_sort))
+print(max_scalar_product([10,30,40,20], [2,4,5,1]))
+
+# method 2
+# for maximum prod -->>both arr should be in ascending order
+def ascending_sort(arr):
+    n=len(arr)
+    for i in range(n):
+        for j in range(i+1,n):
+            if arr[i]>arr[j]:
+                arr[i],arr[j]=arr[j],arr[i]
+    return arr
+def product(a1,a2):
+    a1_sort=ascending_sort(a1)
+    a2_sort=ascending_sort(a2)
+    prod=0
+    for i in range(len(a1_sort)):
+        prod+=a1_sort[i]*a2_sort[i]
+    return prod
+print(product([10,30,40,20], [2,4,5,1]))
