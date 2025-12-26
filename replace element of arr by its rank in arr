@@ -1,2 +1,12 @@
 # i/p:  a=[100,2,70,12,90]
-# o/p =[5,1,3,2,4]
+# o/p =[5,1,3,2,4] 
+a=[100,2,70,12,90]
+sorted_a=sorted(a)
+rank={value:index+1 for index,value in enumerate(sorted_a)}
+res=[rank[x] for x in a]
+print(res)
+
+# method 2
+a=[100,2,70,12,90]
+res1=[sorted(a).index(x)+1 for x in a]
+print(res1)

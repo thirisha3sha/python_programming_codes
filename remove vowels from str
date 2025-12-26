@@ -1,1 +1,8 @@
-# remove vowels from string
+# remove vowels from string  
+#i/p = "aeiouAEIOUhello world"
+# o/p = "hll wrld"
+def remove_vowels(s):
+    vowels='aeiouAEIOU'
+    return ''.join([i for i in s if i not in vowels])
+s = "aeiouAEIOUhello world"
+print(remove_vowels(s))

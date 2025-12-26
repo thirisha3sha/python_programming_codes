@@ -1,0 +1,17 @@
+# i/p (a+b)*[c-d]/{e*f}
+# o/p a+b*c-d/e*f 
+def remove_barckets(exp):
+    brackets={'(':')','[':']','{':'}'}
+    stack=[]
+    res=''
+    for i in exp:
+        if i in brackets.keys():
+            stack.append(i)
+        elif i in brackets.values():
+            if stack and brackets[stack[-1]]==i:
+                stack.pop()
+        else:
+            res+=i
+    return res
+exp="(a+b)*[c-d]/{e*f}"
+print(remove_barckets(exp))
